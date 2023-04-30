@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9729a180cd964e64086e27ee65b50ec9
+guid: e71b762c17ef7944494edd9235b686d3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_0
+      name: tiles_0
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
-        width: 48
-        height: 21
+        x: 32
+        y: 144
+        width: 80
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,41 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f563c75a61cd9504db34a7a1e7c88d75
-      internalID: 1214415602
+      spriteID: 72886f4b1ee69574c92e2bb2033b4be6
+      internalID: -1612705338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_1
+      name: tiles_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 112
-        width: 64
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d4afa688119f364dab6dd23c3104ca9
-      internalID: 782762965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_2
-      rect:
-        serializedVersion: 2
-        x: 48
+        x: 32
         y: 80
-        width: 16
-        height: 16
+        width: 48
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 628aaa776cb85bd44a0d7da43b30039a
-      internalID: 1585500687
+      spriteID: 39103fa6e12564841b9ba009c9bf3b64
+      internalID: 434423816
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_3
+      name: tiles_2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,19 +161,166 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24dd85987c6ecae4595500c351863edd
-      internalID: 119127785
+      spriteID: 0047ce8ea5d09464dbc54e910aa20a9e
+      internalID: 1432026691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_4
+      name: tiles_3
       rect:
         serializedVersion: 2
         x: 80
         y: 48
-        width: 96
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3c466eb195f11049bf33ef292010929
+      internalID: -1673016855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b893ff8d90abe249bee1d49f7452a35
+      internalID: 1329292967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 129
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ec164eb4ea0d84c9e82f3268625d80
+      internalID: -2065131197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_6
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 129
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 913bd4f43d213d344968c9cad58bc3e5
+      internalID: -1161444001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_7
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 96
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63557ce7b2b24d54e9720282d76f5ffb
+      internalID: 54915262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_8
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2641857678b2247abcb1293584fbed
+      internalID: 998146176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_9
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 128
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901e43bbc5ca72e4e9be527616785208
+      internalID: 60235246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_10
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 16
+        width: 32
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -203,188 +329,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e0b2afd71ce9d7428da0e7dca5ef03f
-      internalID: -1225267748
+      spriteID: 45b425f82445abd418d68be746de6445
+      internalID: -1110879897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_5
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 125
-        width: 160
-        height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 31d907a005c32a14aa34e5ca072a005e
-      internalID: -734650515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_6
-      rect:
-        serializedVersion: 2
-        x: 534
-        y: 128
-        width: 26
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87081f61087250946bed6a9142698712
-      internalID: -1958833774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_7
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 128
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0da65f4bf4705848a54ead88cb7398a
-      internalID: 1857811448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_8
-      rect:
-        serializedVersion: 2
-        x: 624
-        y: 128
-        width: 25
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ace3872c833fecb4792350ec12dc80a5
-      internalID: 782533568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_9
-      rect:
-        serializedVersion: 2
-        x: 656
-        y: 128
-        width: 48
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 165f7ba1de432b24aaba1b5875476a8f
-      internalID: 2048772981
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_10
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 128
-        width: 16
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13cfcbc93beb863489a72d1a5be35189
-      internalID: 1430227747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_11
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 16
-        width: 16
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6932c3a142f3246408459538ca9b1a5f
-      internalID: 684946150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_12
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 16
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6287b8982b9b07c4b8fd6b489ade01a9
-      internalID: 67050450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_13
+      name: tiles_11
       rect:
         serializedVersion: 2
         x: 272
         y: 16
         width: 32
-        height: 64
+        height: 96
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -392,20 +350,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6a4a21d9f9402142bd5e2938f26e7f1
-      internalID: 1024868962
+      spriteID: 42d30d914c453b949a0ef09de89a150d
+      internalID: 93806123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_14
+      name: tiles_12
       rect:
         serializedVersion: 2
-        x: 320
-        y: 16
+        x: 336
+        y: 80
         width: 32
-        height: 72
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -413,20 +371,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ebd3d75cb5764d4faae9e798b931942
-      internalID: -1336480265
+      spriteID: 76bfec11b461c8a4480f21317632b9a1
+      internalID: -1801211837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_15
+      name: tiles_13
       rect:
         serializedVersion: 2
-        x: 368
-        y: 16
+        x: 336
+        y: 15
         width: 32
-        height: 72
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -434,188 +392,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ceac7828004b6b9488c68577d51c1eea
-      internalID: 265396009
+      spriteID: 84a93ab36cbaf8d4b9d6105f80685dfe
+      internalID: -475035871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_16
+      name: tiles_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 16
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c59f13e07aec848b9134cd10b5b8f3
+      internalID: -54005960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0349893b391ca2047aed81027f94431b
+      internalID: 1899337943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_16
       rect:
         serializedVersion: 2
         x: 416
-        y: 48
-        width: 32
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ee178c03101c5246b628f5d7b433e06
-      internalID: 2050755888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_17
-      rect:
-        serializedVersion: 2
-        x: 464
-        y: 64
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 521b7437c4206aa46808635e7f4dfe41
-      internalID: 693508980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_18
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 16
-        width: 32
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86b403007af69014c98c7a2d3778c350
-      internalID: -2146382400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_19
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 64
-        width: 32
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27861eb7ca8d9ce48a7bc14d9094ad9d
-      internalID: -2086138425
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_20
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 64
-        width: 32
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e02f999b039c53a43858829734709b79
-      internalID: -1461766102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_21
-      rect:
-        serializedVersion: 2
-        x: 656
-        y: 16
-        width: 32
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6efb36bc3940c6d41994dc3284fe4857
-      internalID: 1046517536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_22
-      rect:
-        serializedVersion: 2
-        x: 704
-        y: 16
-        width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bf226c51d384f54884c5b398d896895
-      internalID: 362493559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_23
-      rect:
-        serializedVersion: 2
-        x: 752
-        y: 16
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 026b32dc3aea5714d93e2c17c9a95e33
-      internalID: 259586414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: old-dark-castle-interior-tileset_24
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 16
+        y: 96
         width: 16
-        height: 25
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -623,8 +455,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e16d75ab414595442a1e2928d4b52fbe
-      internalID: -113349019
+      spriteID: 203309708e23b7d40b481db43797b051
+      internalID: 1789639617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_17
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5955ecc9406db1041ba7cf86ac6fca3a
+      internalID: -662209686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_18
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e90558831756664ea7d2c18c4af5810
+      internalID: -496179218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_19
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 0
+        width: 310
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1409ca994ce56d447a5b7b7c6df98ac7
+      internalID: -435646724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tiles_20
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 0
+        width: 254
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7a07ff0b0dc89408277efeb9aafb81
+      internalID: -462753220
       vertices: []
       indices: 
       edges: []
@@ -640,31 +556,27 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      old-dark-castle-interior-tileset_0: 1214415602
-      old-dark-castle-interior-tileset_1: 782762965
-      old-dark-castle-interior-tileset_10: 1430227747
-      old-dark-castle-interior-tileset_11: 1498811758
-      old-dark-castle-interior-tileset_12: 684946150
-      old-dark-castle-interior-tileset_13: 67050450
-      old-dark-castle-interior-tileset_14: 1024868962
-      old-dark-castle-interior-tileset_15: -1336480265
-      old-dark-castle-interior-tileset_16: 265396009
-      old-dark-castle-interior-tileset_17: 2050755888
-      old-dark-castle-interior-tileset_18: 693508980
-      old-dark-castle-interior-tileset_19: -2146382400
-      old-dark-castle-interior-tileset_2: 1585500687
-      old-dark-castle-interior-tileset_20: -2086138425
-      old-dark-castle-interior-tileset_21: -1461766102
-      old-dark-castle-interior-tileset_22: 1046517536
-      old-dark-castle-interior-tileset_23: 362493559
-      old-dark-castle-interior-tileset_24: 259586414
-      old-dark-castle-interior-tileset_3: 119127785
-      old-dark-castle-interior-tileset_4: -1225267748
-      old-dark-castle-interior-tileset_5: -734650515
-      old-dark-castle-interior-tileset_6: -1958833774
-      old-dark-castle-interior-tileset_7: 1857811448
-      old-dark-castle-interior-tileset_8: 782533568
-      old-dark-castle-interior-tileset_9: 2048772981
+      tiles_0: -1612705338
+      tiles_1: 434423816
+      tiles_10: -1110879897
+      tiles_11: 93806123
+      tiles_12: -1801211837
+      tiles_13: -475035871
+      tiles_14: -54005960
+      tiles_15: 1899337943
+      tiles_16: 1789639617
+      tiles_17: -53076925
+      tiles_18: -662209686
+      tiles_19: -496179218
+      tiles_2: 1432026691
+      tiles_20: 2135407205
+      tiles_3: -1673016855
+      tiles_4: 1329292967
+      tiles_5: -2065131197
+      tiles_6: -1161444001
+      tiles_7: 54915262
+      tiles_8: 998146176
+      tiles_9: 60235246
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
