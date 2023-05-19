@@ -4,6 +4,7 @@ public class Player : MonoBehaviour
 {
     public float speed = 5f; // скорость перемещени€ игрока
     public float jumpForce = 2f;
+    public int health = 100;
 
     private bool isFalling = false;
     private bool isGrounded = true;
@@ -65,6 +66,25 @@ public class Player : MonoBehaviour
             animator.SetBool("PlayerFall", false);
         }
     }
+
+    public void takeDamage(int damageAmount)
+    {
+        health -= damageAmount;
+        if (health <= 0)
+        {
+            // ¬ызываем метод, который обрабатывает смерть игрока
+            die();
+        }
+        Debug.Log("player health = " + health);
+    }
+
+    void die()
+    {
+        Debug.Log("Player died");
+        // ќбработка смерти игрока
+    }
+
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {
