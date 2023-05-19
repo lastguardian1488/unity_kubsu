@@ -156,11 +156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4465846330715945762, guid: 2f50e40b389cb6c489aa8107d714f551, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.27
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 4465846330715945762, guid: 2f50e40b389cb6c489aa8107d714f551, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.06
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 4465846330715945762, guid: 2f50e40b389cb6c489aa8107d714f551, type: 3}
       propertyPath: m_LocalPosition.z
@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 395631973}
   - component: {fileID: 395631972}
   - component: {fileID: 395631971}
+  - component: {fileID: 395631974}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -303,15 +304,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395631970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.31, y: -0.67, z: -0.004500015}
+  m_LocalPosition: {x: -6.11, y: -0.99, z: -0.004500015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &503927496
-GameObject:
+--- !u!114 &395631974
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
