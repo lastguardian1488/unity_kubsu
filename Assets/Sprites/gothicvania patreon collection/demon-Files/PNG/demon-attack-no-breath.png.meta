@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9aaefc8caf1f557489b94e84b53e734a
+guid: cbc2fcfc4618f2d428391722621695df
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: demon-attack-no-breath_0
+      name: demon-attack-copy_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02b760b47c162db4c85153a15cc56d46
-      internalID: 1163622030
+      spriteID: 7f27f170f48b2e3489eba61500bbe3ec
+      internalID: -613245188
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon-attack-no-breath_1
+      name: demon-attack-copy_1
       rect:
         serializedVersion: 2
         x: 192
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65ebdff4070ef3e45a32aaa20db584ee
-      internalID: -1425018361
+      spriteID: 69d77a5dbafbd45409aff49cbe3b2a61
+      internalID: 1297211462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon-attack-no-breath_2
+      name: demon-attack-copy_2
       rect:
         serializedVersion: 2
         x: 384
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5f274f180e9b004ea6541b2402f70f9
-      internalID: -1935717511
+      spriteID: 3074151d7d3e1c947a5511c953c78a48
+      internalID: -476830818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon-attack-no-breath_3
+      name: demon-attack-copy_3
       rect:
         serializedVersion: 2
         x: 576
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9739cb183a1291b4599392eae50071ac
-      internalID: 1421785281
+      spriteID: 9e4e1d40441f8d94f972feb0a48a9077
+      internalID: 5611920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon-attack-no-breath_4
+      name: demon-attack-copy_4
       rect:
         serializedVersion: 2
         x: 768
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3bbeae8a62d2e54785c9da7f215e29a
-      internalID: 1820078911
+      spriteID: d697a406ff77a314ebca4e272ede5777
+      internalID: 444264994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon-attack-no-breath_5
+      name: demon-attack-copy_5
       rect:
         serializedVersion: 2
         x: 960
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 400c8ac7d5030fc4c928a3999390b8ee
-      internalID: 1353949708
+      spriteID: 01c5bb1095d8408419afe09b115f1739
+      internalID: 1002360197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon-attack-no-breath_6
+      name: demon-attack-copy_6
       rect:
         serializedVersion: 2
         x: 1152
@@ -245,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a81a656b7c1e3a4e92335cb287942bc
-      internalID: -738066966
+      spriteID: a58d73b67f75ecc468e66d8e7d96bab6
+      internalID: -1231053908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: demon-attack-no-breath_7
+      name: demon-attack-copy_7
       rect:
         serializedVersion: 2
         x: 1344
@@ -266,8 +266,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cf53de4e03fe3649b82bc93e898cd63
-      internalID: -1891431680
+      spriteID: 5a09bdae0e45a5b4990d3fa1aa16b509
+      internalID: -1279988050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-attack-copy_8
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 192
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cdbed9592df744ea9ba6188dcb3ee8
+      internalID: -1483808596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-attack-copy_9
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 192
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f64559719d1ac54da5399463feb7802
+      internalID: -488813217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demon-attack-copy_10
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 192
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860eccbe83dba3548ac9e1f6c2a98d7b
+      internalID: 519609364
       vertices: []
       indices: 
       edges: []
@@ -283,14 +346,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      demon-attack-no-breath_0: 1163622030
-      demon-attack-no-breath_1: -1425018361
-      demon-attack-no-breath_2: -1935717511
-      demon-attack-no-breath_3: 1421785281
-      demon-attack-no-breath_4: 1820078911
-      demon-attack-no-breath_5: 1353949708
-      demon-attack-no-breath_6: -738066966
-      demon-attack-no-breath_7: -1891431680
+      demon-attack-copy_0: -613245188
+      demon-attack-copy_1: 1297211462
+      demon-attack-copy_10: 519609364
+      demon-attack-copy_2: -476830818
+      demon-attack-copy_3: 5611920
+      demon-attack-copy_4: 444264994
+      demon-attack-copy_5: 1002360197
+      demon-attack-copy_6: -1231053908
+      demon-attack-copy_7: -1279988050
+      demon-attack-copy_8: -1483808596
+      demon-attack-copy_9: -488813217
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
