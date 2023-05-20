@@ -5,18 +5,20 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     public int damageAmount = 10;
-    // Start is called before the first frame update
-    void Start()
-    {
 
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("EndState")) //провер€ем находитс€ ли аниматор огн€ в конечном состо€нии
+            Destroy(gameObject);
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // ѕровер€ем, что столкнулись с объектом на блокирующем слое
