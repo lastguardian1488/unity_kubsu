@@ -5,18 +5,29 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Transform player;
+    public GameObject firePrefab;
     public float moveSpeed = 3f;
     public float attackRange = 4f;
-    public float stopDistance = 3f;
+    public float stopDistance = 3f; //дистанци€ остановки перед игроком
     public float attackDelay = 1f; // «адержка между атаками
-    public GameObject firePrefab;
-    public float fireX = -2.5f;
-    public float fireY = -2f;
+    public int health = 100;
+    
 
     private GameObject fireInstance;
     private Animator animator;
     private bool canMove = true;
     private float currentAttackDelay = 0f;
+
+    public void TakeDamage(int damageAmount)
+    {
+        health -= damageAmount;
+        //место дл€ анимации получени€ дамага
+        if (health <= 0)
+        {
+            animator.SetTrigger("DemonHit");
+            Die();
+        }
+    }
 
     private void Start()
     {
@@ -40,18 +51,9 @@ public class Enemy : MonoBehaviour
         {
             if (currentAttackDelay <= 0f) // ѕровер€ем, прошла ли задержка между атаками
             {
-                // ѕроигрываем анимацию атаки
-                animator.SetTrigger("DemonAttack");
+                animator.SetTrigger("DemonAttack"); // ѕроигрываем анимацию атаки 
                 currentAttackDelay = attackDelay; // ”станавливаем текущую задержку между атаками
-
-                if (fireInstance == null) // ѕровер€ем, не проигрываетс€ ли анимаци€ огн€ уже
-                {
-                    Vector3 firePosition = transform.position + new Vector3(fireX, fireY, 0f);
-                    fireInstance = Instantiate(firePrefab, firePosition, Quaternion.identity);
-                    fireInstance.transform.parent = transform; // ƒелаем огонь дочерним объектом демона
-                    //fireInstance.Play(player); // «апускаем проигрывание анимации огн€
-                    Destroy(fireInstance, 1f);
-                }
+                Invoke("SpawnFire", 0.9f); //откладываем спавн огн€, чтобы попасть в анимацию
             }
             else
             {
@@ -69,5 +71,21 @@ public class Enemy : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
         }
+    }
+
+    private void SpawnFire()
+    {
+        float offsetX = -3.4f; //смещение x огн€ относительно противника
+        float offsetY = -2.5f; //смещение y огн€ относительно противника
+        Vector3 firePosition = transform.position + new Vector3(offsetX, offsetY, 0f); 
+        fireInstance = Instantiate(firePrefab, firePosition, Quaternion.identity);  //создаем объект огн€ из префаба огн€
+        fireInstance.transform.parent = transform; //назначаем огонь дочерним от демона
+        Destroy(fireInstance, 0.5f); //разрушаем спуст€ секунду после создани€
+    }
+
+    private void Die()
+    {
+        //место дл€ анимации смерти
+        Destroy(this);
     }
 }
