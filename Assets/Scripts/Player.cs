@@ -4,6 +4,7 @@ public class Player : MonoBehaviour
 {
     public float speed = 5f; // скорость перемещения игрока
     public float jumpForce = 2f;
+    public float attackForce = 2f;
     public int health = 100;
 
     private bool isFalling = false;
@@ -19,11 +20,15 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        //Анимации передвижения персонажа//
+
         // получаем значение оси горизонтали (A, D или стрелочки влево и вправо)
         float horizontalInput = Input.GetAxis("Horizontal");
 
         // вычисляем вектор перемещения
         Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * speed * Time.deltaTime;
+
+        Vector3 direction = transform.localScale;
 
         // перемещаем игрока
         transform.position += movement;
@@ -34,12 +39,14 @@ public class Player : MonoBehaviour
             // передвижение вправо
             animator.SetBool("PlayerRun", true);
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            direction.x = 180;
         }
         else if (horizontalInput < 0)
         {
             // передвижение влево
             animator.SetBool("PlayerRun", true);
             transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            direction.x = -180;
         }
         else
         {
@@ -64,6 +71,63 @@ public class Player : MonoBehaviour
         {
             isFalling = false;
             animator.SetBool("PlayerFall", false);
+        }
+
+        //Анимации передвижения персонажа//
+
+        //Анимация аттаки персонажа
+        if (Input.GetMouseButton(1) && direction.x > 0)
+        {
+            //if (!animator.GetCurrentAnimatorStateInfo(0).IsName("PlayerRun"))
+            //{
+            //    animator.SetBool("PlayerAttack", true);
+
+            //}
+            //else
+            //{
+            //    animator.SetBool("PlayerRun", false);
+            //    animator.SetBool("PlayerAttack", true);
+
+            //}
+            animator.SetBool("PlayerRun", false);
+            animator.SetBool("PlayerAttackMega", true);
+        }
+        else if(Input.GetMouseButtonDown(1) && direction.x < 0)
+        {
+            animator.SetBool("PlayerRun", false);
+            animator.SetBool("PlayerAttackMega", true);
+            
+        }
+        else
+        {
+            animator.SetBool("PlayerAttackMega", false);
+        }
+
+        if (Input.GetMouseButton(0) && direction.x > 0)
+        {
+            //if (!animator.GetCurrentAnimatorStateInfo(0).IsName("PlayerRun"))
+            //{
+            //    animator.SetBool("PlayerAttack", true);
+
+            //}
+            //else
+            //{
+            //    animator.SetBool("PlayerRun", false);
+            //    animator.SetBool("PlayerAttack", true);
+
+            //}
+            animator.SetBool("PlayerRun", false);
+            animator.SetBool("PlayerAttack", true);
+        }
+        else if (Input.GetMouseButtonDown(0) && direction.x < 0)
+        {
+            animator.SetBool("PlayerRun", false);
+            animator.SetBool("PlayerAttack", true);
+
+        }
+        else
+        {
+            animator.SetBool("PlayerAttack", false);
         }
     }
 
