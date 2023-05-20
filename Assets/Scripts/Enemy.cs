@@ -6,25 +6,26 @@ public class Enemy : MonoBehaviour
 {
     public Transform player;
     public GameObject firePrefab;
+    public GameObject visionArea;
+    public GameObject dieAnimation;
+
     public float moveSpeed = 3f;
     public float attackRange = 4f;
-    public float stopDistance = 3f; //дистанция остановки перед игроком
-    public float attackDelay = 1f; // Задержка между атаками
+    //public float attackDelay = 1f; // Задержка между атаками
     public int health = 100;
-    
 
     private GameObject fireInstance;
     private Animator animator;
-    private bool canMove = true;
-    private float currentAttackDelay = 0f;
+    private EnemyFSM brain;
+    private AttackCooldown cooldown;
 
     public void TakeDamage(int damageAmount)
     {
+        animator.SetTrigger("DemonHit");
         health -= damageAmount;
         //место для анимации получения дамага
         if (health <= 0)
         {
-            animator.SetTrigger("DemonHit");
             Die();
         }
     }
@@ -32,44 +33,77 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        brain = GetComponent<EnemyFSM>();
+        cooldown = GetComponent<AttackCooldown>();
+
+        visionArea = Instantiate(visionArea, transform.position, Quaternion.identity);
+        visionArea.transform.parent = transform;
 
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
+        brain.SetState(Wander);
     }
 
     private void Update()
     {
         // Направляем противника на игрока
-        Vector2 direction = player.position - transform.position;
+        //Vector2 direction = player.position - transform.position;
         /*float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, angle, 0f);*/
+    }
 
-        // Проверяем, находится ли игрок в зоне атаки
-        if (Vector2.Distance(transform.position, player.position) <= attackRange)
+
+    private void ChasePlayer()
+    {
+        if (Vector2.Distance(transform.position, player.position) >= attackRange)
         {
-            if (currentAttackDelay <= 0f) // Проверяем, прошла ли задержка между атаками
+            if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             {
-                animator.SetTrigger("DemonAttack"); // Проигрываем анимацию атаки 
-                currentAttackDelay = attackDelay; // Устанавливаем текущую задержку между атаками
-                Invoke("SpawnFire", 0.9f); //откладываем спавн огня, чтобы попасть в анимацию
+                transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
             }
-            else
-            {
-                currentAttackDelay -= Time.deltaTime; // Уменьшаем текущую задержку между атаками на каждом кадре
-            }
-            canMove = false;
         }
         else
         {
-            canMove = true; // Устанавливаем флаг canMove в true, чтобы противник мог двигаться
+            brain.SetState(Attack);
         }
-
-        // Перемещаем противника к игроку
-        if (canMove && Vector2.Distance(transform.position, player.position) > stopDistance)
+        if (!IsPlayerInSight())
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            brain.SetState(Wander);
+        }
+    }
+
+    private void Wander()
+    {
+        if (IsPlayerInSight())
+        {
+            brain.SetState(ChasePlayer);
+        }
+        else
+        {
+
+        }
+    }
+
+    private void Attack()
+    {
+        if (Vector2.Distance(transform.position, player.position) <= attackRange)
+        {
+            if (cooldown.isZeroed()) // Проверяем, прошла ли задержка между атаками
+            {
+                animator.SetTrigger("DemonAttack"); // Проигрываем анимацию атаки 
+                cooldown.StartCooldown(); // Устанавливаем текущую задержку между атаками
+                Invoke(nameof(SpawnFire), 0.9f); //откладываем спавн огня, чтобы попасть в анимацию
+            }
+        }
+        else
+        {
+            brain.SetState(ChasePlayer);
+        }
+        if (!IsPlayerInSight())
+        {
+            brain.SetState(Wander);
         }
     }
 
@@ -80,12 +114,22 @@ public class Enemy : MonoBehaviour
         Vector3 firePosition = transform.position + new Vector3(offsetX, offsetY, 0f); 
         fireInstance = Instantiate(firePrefab, firePosition, Quaternion.identity);  //создаем объект огня из префаба огня
         fireInstance.transform.parent = transform; //назначаем огонь дочерним от демона
-        Destroy(fireInstance, 0.5f); //разрушаем спустя секунду после создания
+        Die();
+    }
+
+    private bool IsPlayerInSight()
+    {
+        return visionArea.GetComponent<VisionArea>().playerInSight;
     }
 
     private void Die()
     {
-        //место для анимации смерти
-        Destroy(this);
+        Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        ParticleSystem dieEffect = Instantiate(dieAnimation.GetComponent<ParticleSystem>(), transform.position, Quaternion.identity);
+        dieEffect.Play();
     }
 }
