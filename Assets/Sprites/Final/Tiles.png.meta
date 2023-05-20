@@ -143,8 +143,8 @@ TextureImporter:
         serializedVersion: 2
         x: 128
         y: 320
-        width: 27
-        height: 47
+        width: 28
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,9 +163,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 256
-        width: 56
-        height: 37
+        y: 257
+        width: 57
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -373,9 +373,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 295
+        y: 290
         width: 33
-        height: 60
+        height: 65
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -519,12 +519,12 @@ TextureImporter:
       name: Tiles_19
       rect:
         serializedVersion: 2
-        x: 216
-        y: 257
-        width: 106
-        height: 35
+        x: 224
+        y: 256
+        width: 99
+        height: 103
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -545,7 +545,7 @@ TextureImporter:
         width: 29
         height: 41
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -561,12 +561,12 @@ TextureImporter:
       name: Tiles_21
       rect:
         serializedVersion: 2
-        x: 157
-        y: 319
+        x: 156
+        y: 320
         width: 44
-        height: 51
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -583,11 +583,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 201
-        y: 321
+        y: 320
         width: 26
-        height: 46
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
