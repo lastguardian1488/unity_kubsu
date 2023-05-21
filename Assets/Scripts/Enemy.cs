@@ -19,6 +19,11 @@ public class Enemy : MonoBehaviour
     private EnemyFSM brain;
     private AttackCooldown cooldown;
 
+    private bool isMovingRight = true;
+    private float timer = 0f;
+    private float distance = 2f;
+    private float pauseTime = 1f;
+
     public void TakeDamage(int damageAmount)
     {
         animator.SetTrigger("DemonHit");
@@ -82,7 +87,25 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            
+            if (isMovingRight)
+            {
+                transform.Translate(0.5f * moveSpeed * Time.deltaTime * Vector2.right);
+            }
+            else
+            {
+                transform.Translate(0.5f * moveSpeed * Time.deltaTime * Vector2.left);
+            }
 
+            timer += Time.deltaTime;
+            if (timer >= 2f)
+            {
+                if (isMovingRight)
+                    isMovingRight = false;
+                else
+                    isMovingRight = true;
+                timer = 0f;
+            }
         }
     }
 
