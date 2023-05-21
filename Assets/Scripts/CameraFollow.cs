@@ -1,14 +1,25 @@
 
 using UnityEngine;
+using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class CameraFollow : MonoBehaviour
 {
+
     public Transform target;
+    public Vector3 offset;
+    [Range(1,10)]
+    public float smoothFactor;
 
-    void FixedUpdate()
+    private void FixedUpdate ()
     {
-        this.transform.position = new Vector3(target.position.x, this.transform.position.y, this.transform.position.z);
-
+        Follow();   
+    }
+    void Follow()
+    {
+        Vector3 targetPosition = target.position + offset;
+        Vector3 smoothPosition = Vector3.Lerp(transform.position, targetPosition, smoothFactor * Time.fixedDeltaTime);
+        transform.position = smoothPosition;
 
     }
 }

@@ -12,7 +12,10 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 3f;
     public float attackRange = 4f;
     //public float attackDelay = 1f; // Задержка между атаками
-    public int health = 100;
+
+    public int maxHeath = 100;
+    private int health;
+
 
     private GameObject fireInstance;
     private Animator animator;
@@ -37,6 +40,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        health = maxHeath;
         animator = GetComponent<Animator>();
         brain = GetComponent<EnemyFSM>();
         cooldown = GetComponent<AttackCooldown>();
