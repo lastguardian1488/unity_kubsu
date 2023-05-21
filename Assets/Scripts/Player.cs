@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
 
         // вычисляем вектор перемещения
-        Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * speed * Time.deltaTime;
+        Vector3 movement = speed * Time.deltaTime * new Vector3(horizontalInput, 0f, 0f);
 
         Vector3 direction = transform.localScale;
 
@@ -168,7 +168,6 @@ public class Player : MonoBehaviour
     void die()
     {
         animator.SetBool("PlayerDeath", true);
-      
         //Restart();
         Debug.Log("Player died");
     
