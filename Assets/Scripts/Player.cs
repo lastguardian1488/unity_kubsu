@@ -1,17 +1,43 @@
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+
+
     public float speed = 5f; // скорость перемещения игрока
+
     public float jumpForce = 2f;
-    public float attackForce = 2f;
-    public int health = 100;
+
+    public float attackWeakRate = 2f;
+    public float attackStrongRate = 5f;
+    public float nextAttackTime = 0f;
+
+    public float attackWeakRange = 1.1f;
+    public float attackStrongRange = 1.5f;
+
+    public int attackWeakDamage = 20;
+    public int attackStrongDamage = 50;
+
+    public LayerMask enemyLayers;
+    public Transform attackPoint; 
+
+    private int currentHealth;
+    public int maxHealth = 100;
 
     private bool isFalling = false;
     private bool isGrounded = true;
+
+
+
     private Animator animator;
     private Rigidbody2D rb;
 
+    private void Start()
+    {
+        currentHealth = maxHealth;
+    }
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -20,7 +46,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        //Анимации передвижения персонажа//
+    //Анимации передвижения персонажа//
 
         // получаем значение оси горизонтали (A, D или стрелочки влево и вправо)
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -76,76 +102,84 @@ public class Player : MonoBehaviour
         //Анимации передвижения персонажа//
 
         //Анимация аттаки персонажа
-        if (Input.GetMouseButton(1) && direction.x > 0)
+        if (Time.time >= nextAttackTime)
         {
-            //if (!animator.GetCurrentAnimatorStateInfo(0).IsName("PlayerRun"))
-            //{
-            //    animator.SetBool("PlayerAttack", true);
-
-            //}
-            //else
-            //{
-            //    animator.SetBool("PlayerRun", false);
-            //    animator.SetBool("PlayerAttack", true);
-
-            //}
-            animator.SetBool("PlayerRun", false);
-            animator.SetBool("PlayerAttackMega", true);
+            if (Input.GetMouseButtonDown(0))
+            {
+                WeakAttack();
+                nextAttackTime = Time.time +1f/attackWeakRate;
+            }
         }
-        else if(Input.GetMouseButtonDown(1) && direction.x < 0)
+        if (Time.time >= nextAttackTime)
         {
-            animator.SetBool("PlayerRun", false);
-            animator.SetBool("PlayerAttackMega", true);
-            
+            if (Input.GetMouseButtonDown(1))
+            {
+                StrongAttack();
+                nextAttackTime = Time.time + 1f / attackStrongRate;
+            }
         }
-        else
+    //Анимация аттаки персонажа
+
+    }
+
+
+    void WeakAttack()
+    {
+        animator.SetTrigger("PlayerWeakAttack");
+
+        Collider2D [] hitEnemys = Physics2D.OverlapCircleAll(attackPoint.position, attackWeakRange, enemyLayers);
+
+        foreach(Collider2D enemy in hitEnemys)
         {
-            animator.SetBool("PlayerAttackMega", false);
+            enemy.GetComponent<Enemy>().TakeDamage(attackWeakDamage);
+            Debug.Log("Слабая аттака по " + enemy.name);
         }
+    }
 
-        if (Input.GetMouseButton(0) && direction.x > 0)
+    void StrongAttack()
+    {
+        animator.SetTrigger("PlayerStrongAttack");
+
+        Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(attackPoint.position, attackStrongRange, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemys)
         {
-            //if (!animator.GetCurrentAnimatorStateInfo(0).IsName("PlayerRun"))
-            //{
-            //    animator.SetBool("PlayerAttack", true);
-
-            //}
-            //else
-            //{
-            //    animator.SetBool("PlayerRun", false);
-            //    animator.SetBool("PlayerAttack", true);
-
-            //}
-            animator.SetBool("PlayerRun", false);
-            animator.SetBool("PlayerAttack", true);
-        }
-        else if (Input.GetMouseButtonDown(0) && direction.x < 0)
-        {
-            animator.SetBool("PlayerRun", false);
-            animator.SetBool("PlayerAttack", true);
-
-        }
-        else
-        {
-            animator.SetBool("PlayerAttack", false);
+            enemy.GetComponent<Enemy>().TakeDamage(attackStrongDamage);
+            Debug.Log("Сильная аттака по " + enemy.name);
         }
     }
 
     public void takeDamage(int damageAmount)
     {
-        health -= damageAmount;
-        if (health <= 0)
+        currentHealth -= damageAmount;
+        if (currentHealth <= 0)
         {
             // Вызываем метод, который обрабатывает смерть игрока
             die();
         }
-        Debug.Log("player health = " + health);
+        else
+        {
+            animator.SetTrigger("PlayerGetHit");
+            animator.SetBool("PlayerDeath", false);
+        }
+        Debug.Log("player health = " + currentHealth);
     }
 
     void die()
     {
+        animator.SetBool("PlayerDeath", true);
+      
+        //Restart();
         Debug.Log("Player died");
-        // Обработка смерти игрока
+    
+
+    }
+
+   
+    void Restart()
+    {
+        Invoke("Restart", 30f);
+        SceneManager.LoadScene("PlaerScene", LoadSceneMode.Single);
     }
 
 
@@ -158,5 +192,14 @@ public class Player : MonoBehaviour
             // Проверяем, что столкнулись с объектом с тегом "ground"
             isGrounded = true; // Изменяем значение параметра isGround
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackWeakRange);
+        Gizmos.DrawWireSphere(attackPoint.position, attackStrongRange);
     }
 }

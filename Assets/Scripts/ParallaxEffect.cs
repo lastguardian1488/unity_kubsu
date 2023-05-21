@@ -2,27 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.U2D.Sprites;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class ParallaxEffect : MonoBehaviour
 {
 
-    private float lenght, startpos;
+    private float startposX, startposY;
 
     public GameObject cam;
     public float parallaxEffect;
 
-    // Start is called before the first frame update
+  
     void Start()
     {
-        startpos = transform.position.x;
-        lenght = GetComponent<SpriteRenderer>().bounds.size.x;
+        startposX = transform.position.x;
+        startposY = transform.position.y;
+      
     }
 
     void FixedUpdate()
     {
-        float dist = (cam.transform.position.x * parallaxEffect);
-
-        transform.position = new Vector3(startpos + dist, transform.position.y, transform.position.z);
+        float distX = (cam.transform.position.x * parallaxEffect);
+        float distY = (cam.transform.position.y * parallaxEffect) -2;
+        transform.position = new Vector3(startposX + distX, startposY + distY, transform.position.z);
     }
 
    
