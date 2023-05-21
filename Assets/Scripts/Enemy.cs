@@ -114,7 +114,6 @@ public class Enemy : MonoBehaviour
         Vector3 firePosition = transform.position + new Vector3(offsetX, offsetY, 0f); 
         fireInstance = Instantiate(firePrefab, firePosition, Quaternion.identity);  //создаем объект огня из префаба огня
         fireInstance.transform.parent = transform; //назначаем огонь дочерним от демона
-        Die();
     }
 
     private bool IsPlayerInSight()
