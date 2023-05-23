@@ -153,14 +153,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb277ad6bd42c5043a47f883202e435a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 6
   jumpForce: 6
-  attackWeakRate: 2
-  attackStrongRate: 5
+  attackWeakRate: 2.1
+  attackStrongRate: 1.8
   nextAttackTime: 0
   attackWeakRange: 1.1
   attackStrongRange: 1.5
   attackWeakDamage: 20
+  attackComboDamage: 35
   attackStrongDamage: 50
   enemyLayers:
     serializedVersion: 2
