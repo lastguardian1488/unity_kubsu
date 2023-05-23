@@ -10,14 +10,16 @@ public class Player : MonoBehaviour
 
     public float jumpForce = 2f;
 
-    public float attackWeakRate = 2f;
-    public float attackStrongRate = 5f;
+    public float attackWeakRate = 2.1f;
+    public float attackStrongRate = 1.8f;
     public float nextAttackTime = 0f;
+    private bool comboAttack = false;
 
     public float attackWeakRange = 1.1f;
     public float attackStrongRange = 1.5f;
 
     public int attackWeakDamage = 20;
+    public int attackComboDamage = 35;
     public int attackStrongDamage = 50;
 
     public LayerMask enemyLayers;
@@ -104,28 +106,43 @@ public class Player : MonoBehaviour
         //Анимация аттаки персонажа
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && !comboAttack)
             {
-                WeakAttack();
+                animator.SetTrigger("PlayerWeakAttack");
                 nextAttackTime = Time.time +1f/attackWeakRate;
+                comboAttack = true;
+              
+            }else if (Input.GetMouseButtonDown(0) && comboAttack)
+            {
+                animator.SetTrigger("PlayerComboAttack");
+                nextAttackTime = Time.time + 1f / attackWeakRate;
+                comboAttack = false;
+
+               
             }
+           
         }
         if (Time.time >= nextAttackTime)
         {
             if (Input.GetMouseButtonDown(1))
             {
-                StrongAttack();
-                nextAttackTime = Time.time + 1f / attackStrongRate;
+                animator.SetTrigger("PlayerStrongAttack");
+     
+                nextAttackTime = Time.time + 2f / attackStrongRate;
             }
         }
-    //Анимация аттаки персонажа
+       
+        //Анимация аттаки персонажа
 
     }
 
-
+    void ComboAttackOff()
+    {
+        comboAttack = false;
+    }
     void WeakAttack()
     {
-        animator.SetTrigger("PlayerWeakAttack");
+       
 
         Collider2D [] hitEnemys = Physics2D.OverlapCircleAll(attackPoint.position, attackWeakRange, enemyLayers);
 
@@ -136,9 +153,20 @@ public class Player : MonoBehaviour
         }
     }
 
+    void CombatAttack()
+    {
+
+        Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(attackPoint.position, attackWeakRange, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemys)
+        {
+            enemy.GetComponent<Enemy>().TakeDamage(attackWeakDamage);
+            Debug.Log("Слабая аттака по " + enemy.name);
+        }
+    }
     void StrongAttack()
     {
-        animator.SetTrigger("PlayerStrongAttack");
+       
 
         Collider2D[] hitEnemys = Physics2D.OverlapCircleAll(attackPoint.position, attackStrongRange, enemyLayers);
 
